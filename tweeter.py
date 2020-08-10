@@ -7,9 +7,9 @@ from googleapiclient.errors import HttpError
 
 # Logs into Twitter account using API keys and access tokens
 def login():
-    auth = tweepy.OAuthHandler('2yB6EoSbL6fa5CQbTSLQaCFgJ', 'UNBBbaNsKEpcrSakU80vCHNRMNcle39dmwoxpetmue1AYzyLuM')
-    auth.set_access_token('1274993680382717952-yojLZn4MeWZxT9hv89DU3aPJ5gDfPR',
-                          'wFKKmBFleaielfGE5dV2zQNIlmLjAP7Uj9Nxr3eNrBdBx')
+    auth = tweepy.OAuthHandler('secret1', 'secret2')
+    auth.set_access_token('secret1',
+                          'secret2')
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
     api.verify_credentials()
     return api
@@ -31,7 +31,7 @@ def grab_headline(subject):
 
 # Using the Google Images Search library and Google Developer app + Custom Search to retrieve first Google img result
 def retrieve_image(headline, subject):
-    engine = GoogleImagesSearch('AIzaSyCsavmI2CQ3KDxWtC88PVjGwQ1WZczA36c', '000994263728465261931:si5kxdmyyve')
+    engine = GoogleImagesSearch('secret1', 'secret2')
     parameters = {
         'q': headline,
         'num': 1,
